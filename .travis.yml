@@ -1,9 +1,8 @@
 sudo: false
 language: ruby
 rvm:
-  - 2.1.0
-  - 2.2.2
-  - 2.2.3
+  - 2.2.5
+  - 2.3.1
 env:
   - DIGITALOCEAN_ACCESS_TOKEN="fake_access_token"
 script: bundle exec rake spec

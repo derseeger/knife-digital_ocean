@@ -166,6 +166,13 @@ class Chef
              description: 'Enables ipv6 for the created droplet',
              default: false
 
+      option :user_data,
+             short: '-u USER_DATA_FILE',
+             long: '--user-data USER_DATA_FILE',
+             description: 'A file containing the user_data, this usually contains a cloud-config/cloud-init config',
+             proc: proc { |u| Chef::Config[:knife][:user_data] = File.read(u) },
+             default: ''
+
       def run
         $stdout.sync = true
 
@@ -221,7 +228,8 @@ class Chef
                                           ssh_keys: locate_config_value(:ssh_key_ids),
                                           private_networking: locate_config_value(:private_networking),
                                           backups: locate_config_value(:backups),
-                                          ipv6: locate_config_value(:ipv6)
+                                          ipv6: locate_config_value(:ipv6),
+                                          user_data: locate_config_value(:user_data)
                                          )
 
         server = client.droplets.create(droplet)

@@ -43,7 +43,7 @@ This plugin provides the following sub-commands:
 * knife digital_ocean droplet list (options)  
   **Lists currently running virtual machines**
 
-* knife digital_ocean droplet power (options)  
+* knife digital_ocean droplet power (options)
   **Turn a droplet On/Off**
 
 * knife digital_ocean droplet powercycle (options)  
@@ -51,6 +51,9 @@ This plugin provides the following sub-commands:
 
 * knife digital_ocean droplet reboot (options)  
   **Reboot a Droplet**
+
+* knife digital_ocean droplet shutdown (options)
+  **Shutdown a droplet**
 
 * knife digital_ocean droplet snapshot (options)  
   **Take a snapshot of a Droplet**
@@ -306,6 +309,12 @@ OK
 #### Resize A Droplet
 ```shell
 ➜ knife digital_ocean rename -I 1824315 -s 1gb
+OK
+```
+
+#### Shutdown a droplet
+```shell
+➜ knife digital_ocean shutdown -I 1824315
 OK
 ```
 

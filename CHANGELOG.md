@@ -1,3 +1,7 @@
+# 3.0.0.beta1 / 2017-05-07
+
+* Update droplet_kit dependency to version '~> 2.1'
+
 # 2.6.0 / 2017-05-07
 
 * Support of shutting down droplets.

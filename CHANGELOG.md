@@ -1,3 +1,8 @@
+# 2.6.0 / 2017-05-07
+
+* Support of shutting down droplets.
+  Thanks to [@01sas](https://github.com/01sas) [PR #87]
+
 # 2.5.0 / 2016-04-19
 
 * fix vcr cassettes (droplet_kit pagination)

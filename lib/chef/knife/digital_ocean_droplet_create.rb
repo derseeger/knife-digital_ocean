@@ -173,6 +173,11 @@ class Chef
              proc: proc { |u| Chef::Config[:knife][:user_data] = File.read(u) },
              default: ''
 
+      option :volumes,
+             long: '--volumes VOLUME_ID',
+             description: 'A flat array including the unique string identifier for each Block Storage volume to be attached to the Droplet.',
+             proc: ->(o) { o.split(/[\s,]+/) }
+
       def run
         $stdout.sync = true
 
@@ -229,7 +234,8 @@ class Chef
                                           private_networking: locate_config_value(:private_networking),
                                           backups: locate_config_value(:backups),
                                           ipv6: locate_config_value(:ipv6),
-                                          user_data: locate_config_value(:user_data)
+                                          user_data: locate_config_value(:user_data),
+                                          volumes: locate_config_value(:volumes)
                                          )
 
         server = client.droplets.create(droplet)
@@ -245,14 +251,14 @@ class Chef
           puts ui.color("JSON Attributes: #{config[:json_attributes]}", :magenta)
         end
 
-        print ui.color('Waiting for IPv4-Address', :magenta)
+        print ui.color('Waiting for IPv4-Address: ', :magenta)
         print('.') until ip_address = ip_address_available(server.id) do
           puts 'done'
         end
 
         puts ui.color("IPv4 address is: #{ip_address}", :green)
 
-        print ui.color('Waiting for sshd:', :magenta)
+        print ui.color('Waiting for sshd: ', :magenta)
         print('.') until tcp_test_ssh(ip_address) do
           sleep 2
           puts 'done'

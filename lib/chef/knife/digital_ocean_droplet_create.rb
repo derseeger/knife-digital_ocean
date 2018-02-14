@@ -175,7 +175,7 @@ class Chef
 
       option :volumes,
              long: '--volumes VOLUME_ID',
-             description: 'A flat array including the unique string identifier for each Block Storage volume to be attached to the Droplet.',
+             description: 'Comma spearated list including the unique string identifier for each Block Storage volume to be attached to the Droplet.',
              proc: ->(o) { o.split(/[\s,]+/) }
 
       def run

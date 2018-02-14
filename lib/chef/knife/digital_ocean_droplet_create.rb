@@ -176,7 +176,8 @@ class Chef
       option :volumes,
              long: '--volumes VOLUME_ID',
              description: 'Comma spearated list including the unique string identifier for each Block Storage volume to be attached to the Droplet.',
-             proc: ->(o) { o.split(/[\s,]+/) }
+             proc: ->(o) { o.split(/[\s,]+/) },
+             default: ''
 
       def run
         $stdout.sync = true

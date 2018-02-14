@@ -1,24 +1,3 @@
-# Our Incredible Journey…
-
-A lot has changed in the last 5 years and it's now time to conclude this open source project. Thanks for every contribution and of course to all users!
-
-I recommend all users to switch to [Terraform](https://www.terraform.io/) instead. It supports plenty of cloud hosting/service providers (like [Vultr.com (Affiliate Link)](https://www.vultr.com/?ref=7126073), which runs all my infrastructure as of today) and plenty of provisioning methods, including chef:
-
-
-- https://www.terraform.io/
-- DigitalOcean support: https://www.terraform.io/docs/providers/do/index.html
-- Chef support: https://www.terraform.io/docs/provisioners/chef.html
-- support for local execution of arbitrary commands: https://www.terraform.io/docs/provisioners/local-exec.html
-- support for remote execution of arbitrary commands:  https://www.terraform.io/docs/provisioners/remote-exec.html
-
-(Hint: I've seen people building terraform files using ERb or other templating systems of their choice to implement a "dynamic" lifecycle)
-
-See you!
-
-– Roland
-
-
-
 # Knife::DigitalOcean
 #### A knife plugin to deal with the [DigitalOcean.com](https://www.digitalocean.com) Cloud services.
 

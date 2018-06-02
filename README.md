@@ -20,13 +20,8 @@ will be removed with 3.x.x by the end of 2015.
 ### when using ChefDK
 
 ```shell
-➜ chef gem install knife-digital_ocean
-```
-
-### in typical Ruby setup
-
-```shell
-➜ gem install knife-digital_ocean
+➜ chef gem install specific_install
+➜ sudo chef gem specific_install -l https://github.com/derseeger/knife-digital_ocean.git
 ```
 
 
